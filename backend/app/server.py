@@ -2,6 +2,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.api.v1 import api_router
+
 
 def get_application():
     app = FastAPI(title="Phresh", version="1.0.0")
@@ -14,7 +16,7 @@ def get_application():
         allow_headers=["*"],
     )
 
-    app.include_router(api_router, prefix="/api")
+    app.include_router(api_router, prefix="/v1")
 
     return app
 
