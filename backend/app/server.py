@@ -6,7 +6,7 @@ from app.api.v1 import api_router
 
 
 def get_application():
-    app = FastAPI(title="Phresh", version="1.0.0")
+    app = FastAPI(title="COVID19-Database", version="1.0.0")
 
     app.add_middleware(
         CORSMiddleware,
