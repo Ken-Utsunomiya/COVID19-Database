@@ -2,13 +2,13 @@ from databases import DatabaseURL
 from starlette.config import Config
 from starlette.datastructures import Secret
 
-config = Config(".env")
+config = Config(".database.env")
 
-PROJECT_NAME = "phresh"
+PROJECT_NAME = "COVID19-Database"
 VERSION = "1.0.0"
 API_PREFIX = "/v1"
 
-SECRET_KEY = config("SECRET_KEY", cast=Secret, default="CHANGEME")
+SECRET_KEY = config("SECRET_KEY", cast=Secret, default="")
 
 POSTGRES_USER = config("POSTGRES_USER", cast=str)
 POSTGRES_PASSWORD = config("POSTGRES_PASSWORD", cast=Secret)
